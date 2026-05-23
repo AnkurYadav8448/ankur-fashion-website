@@ -1,0 +1,386 @@
+/* style.css — Ankur Fashion (Amazon-style) */
+@import url('https://fonts.googleapis.com/css2?family=Amazon+Ember:wght@400;500;700&family=Inter:wght@400;500;700&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Amazon Ember','Inter',Arial,sans-serif;
+  background:#eaeded;
+  color:#0f1111;
+  font-size:14px;
+  line-height:1.4;
+}
+img{display:block;max-width:100%}
+
+/* ===== Header ===== */
+header{
+  background:#131921;
+  color:#fff;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:60px;
+  position:sticky;top:0;z-index:100;
+}
+header h1{
+  font-size:22px;
+  font-weight:700;
+  color:#fff;
+  padding:8px 10px;
+  border:1px solid transparent;
+  border-radius:3px;
+  cursor:pointer;
+  white-space:nowrap;
+}
+header h1:hover{border-color:#fff}
+header h1::after{
+  content:".in";
+  color:#ff9900;
+  font-size:14px;
+  vertical-align:super;
+}
+
+/* ===== Navbar ===== */
+nav{
+  display:flex;
+  flex-wrap:wrap;
+  background:#232f3e;
+  position:fixed;
+  top:60px;left:0;right:0;
+  padding:6px 20px;
+  z-index:99;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  padding:8px 12px;
+  font-size:14px;
+  font-weight:500;
+  border:1px solid transparent;
+  border-radius:3px;
+  transition:border-color .15s;
+}
+nav a:hover{border-color:#fff}
+
+/* ===== Hero Banner ===== */
+section:first-of-type{
+  margin-top:44px;
+  background:
+    linear-gradient(180deg, rgba(19,25,33,.0) 0%, rgba(234,237,237,1) 100%),
+    url('https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1800') center/cover no-repeat;
+  min-height:340px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+  text-align:center;
+}
+section:first-of-type h2{
+  background:rgba(255,255,255,.92);
+  color:#0f1111;
+  font-size:clamp(22px,3vw,34px);
+  font-weight:700;
+  padding:18px 28px;
+  border-radius:4px;
+  max-width:900px;
+  box-shadow:0 2px 8px rgba(0,0,0,.15);
+}
+
+/* ===== Products Section ===== */
+section + section{
+  max-width:1500px;
+  margin:20px auto;
+  background:#fff;
+  padding:20px;
+  border-radius:4px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;
+}
+section + section > h2{
+  grid-column:1 / -1;
+  font-size:21px;
+  font-weight:700;
+  color:#0f1111;
+  padding-bottom:10px;
+  border-bottom:1px solid #e7e7e7;
+  margin-bottom:6px;
+}
+section + section br{display:none}
+
+/* ===== Product Card ===== */
+section > div{
+  background:#fff;
+  border:1px solid transparent;
+  border-radius:4px;
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  transition:border-color .15s, box-shadow .15s;
+  position:relative;
+}
+section > div:hover{
+  border-color:#e77600;
+  box-shadow:0 0 0 3px rgba(228,121,17,.18);
+}
+
+section > div img{
+  width:100%;
+  height:220px;
+  object-fit:contain;
+  background:#fafafa;
+  padding:8px;
+  border-radius:3px;
+  transition:transform .25s;
+}
+section > div:hover img{transform:scale(1.03)}
+
+section > div h3{
+  font-size:15px;
+  font-weight:400;
+  color:#007185;
+  margin:10px 0 4px;
+  cursor:pointer;
+  line-height:1.3;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+section > div h3:hover{
+  color:#c7511f;
+  text-decoration:underline;
+}
+
+section > div h3::after{
+  content:"★★★★☆  1,248";
+  display:block;
+  font-size:12px;
+  color:#ffa41c;
+  margin-top:4px;
+}
+
+/* ===== Price ===== */
+section > div p{
+  font-size:20px;
+  font-weight:500;
+  color:#0f1111;
+  margin:6px 0 2px;
+}
+section > div p::before{
+  content:"-12% ";
+  color:#cc0c39;
+  font-weight:700;
+  font-size:15px;
+  margin-right:6px;
+}
+section > div p::after{
+  content:" Free Delivery";
+  display:block;
+  font-size:12px;
+  color:#565959;
+  font-weight:400;
+  margin-top:2px;
+}
+
+/* ===== Add to Cart Button ===== */
+section > div button{
+  border:1px solid #a88734;
+  background:linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  color:#0f1111;
+  font-size:13px;
+  font-weight:500;
+  padding:8px 10px;
+  margin-top:8px;
+  border-radius:20px;
+  cursor:pointer;
+  transition:background .15s, border-color .15s;
+}
+section > div button:hover{
+  background:linear-gradient(to bottom,#f5d78e,#eeb933);
+  border-color:#9c7e31;
+}
+
+/* ===== Buy Now Button ===== */
+section > div .buy-btn{
+  background:linear-gradient(to bottom,#f7ca00,#f0a500);
+  border-color:#a88734;
+  margin-top:6px;
+}
+section > div .buy-btn:hover{
+  background:linear-gradient(to bottom,#f5b91f,#e88a00);
+}
+
+/* ===== Footer ===== */
+footer{
+  margin-top:30px;
+  background:#232f3e;
+  color:#ddd;
+  text-align:center;
+  padding:30px 20px;
+  font-size:13px;
+  border-top:4px solid #37475a;
+}
+footer p::before{
+  content:"Ankur Fashion";
+  display:block;
+  font-size:20px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:8px;
+}
+footer p::after{
+  content:" • Conditions of Use • Privacy Notice • Help";
+  color:#8a9ba8;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  header{height:50px;padding:0 10px}
+  header h1{font-size:18px}
+  nav{top:50px;padding:4px 10px;overflow-x:auto;flex-wrap:nowrap}
+  nav a{padding:6px 10px;font-size:13px;white-space:nowrap}
+  section + section{
+    grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+    gap:10px;
+    padding:12px;
+  }
+  section > div img{height:160px}
+  section > div p{font-size:17px}
+}
+
+/* ===== Cart Button in Header ===== */
+#cart-btn {
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 12px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+}
+#cart-btn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+#cart-badge {
+  background: #ff9900;
+  color: #111;
+  border-radius: 50%;
+  padding: 2px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+/* ===== Toast ===== */
+#toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #232f3e;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 9999;
+  font-size: 14px;
+}
+#toast.show { opacity: 1; }
+
+/* ===== Cart Modal Overlay ===== */
+#cart-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* ===== Cart Modal Box ===== */
+#cart-modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  min-width: 320px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+#cart-modal-content h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f1111;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 10px;
+}
+
+/* ===== Cart Item Row ===== */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+/* ===== Remove Button in Cart ===== */
+.cart-item button {
+  background: #fff !important;
+  border: 1px solid #d5d9d9 !important;
+  color: #cc0c39 !important;
+  padding: 4px 8px !important;
+  border-radius: 4px !important;
+  font-size: 12px !important;
+  cursor: pointer;
+  margin-top: 0 !important;
+}
+.cart-item button:hover {
+  background: #fff0f0 !important;
+  border-color: #cc0c39 !important;
+}
+
+/* ===== Cart Total ===== */
+#cart-total {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f1111;
+  text-align: right;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 2px solid #e7e7e7;
+}
+
+/* ===== Close Button in Cart ===== */
+#cart-modal-content > button {
+  display: block;
+  margin: 16px auto 0;
+  background: #ff9900 !important;
+  border: none !important;
+  color: #111 !important;
+  padding: 10px 30px !important;
+  border-radius: 20px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+}
+#cart-modal-content > button:hover {
+  background: #e88a00 !important;
+}
+
+/* ===== Empty Cart Message ===== */
+#cart-items p {
+  text-align: center;
+  color: #565959;
+  padding: 30px 0;
+  font-size: 15px;
+}
